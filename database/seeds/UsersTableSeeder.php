@@ -9,8 +9,11 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Request $request)
     {
-        //
+        $user = new User([
+          'name' => $request->name,
+          'lastname' => $request->lastname,
+        ])
     }
 }
