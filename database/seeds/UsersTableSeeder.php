@@ -11,9 +11,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run(Request $request)
     {
-        $user = new User([
+        $user = User::create([
           'name' => $request->name,
           'lastname' => $request->lastname,
-        ])
+          'email' => $request->email,
+          'password' => $request->password,
+          'birth' => $request->birth,
+          'avatar' => $request->avatar
+        ]);
     }
 }
