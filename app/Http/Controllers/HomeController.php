@@ -19,10 +19,10 @@ class HomeController extends Controller
     	// Auth::user()->posts()->paginate(3) <- con los parentesis despues de posts
     	$posts = Auth::user()->posts;
 
-    	return view('panel.posts')->with('posts', $posts);
+    	return view('panel.perfil')->with('posts', $posts);
     }
 
     public function displayProfile() {
-    	return view('panel.profile')->with('profile', Auth::user());
+    	return view('panel.perfil')->with('profile', Auth::user());
     }
 }

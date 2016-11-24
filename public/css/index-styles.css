@@ -1,0 +1,256 @@
+*{
+box-sizing: border-box;
+}
+
+
+@import "https://fonts.googleapis.com/css?family=Abel";
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700i";
+body{
+font-family: 'Abel', sans-serif;
+}
+.contenedor{
+margin-bottom: 65px;
+width: 100%;
+height: 100%;
+}
+
+
+
+}
+.nav01,
+.nav02,
+.nav03,
+.nav04{
+float: left;
+padding: 7px;
+border-radius: 10px 10px 10px 10px;
+background-color: #FF5C57;
+margin: 10px;
+}
+
+.info-perfil{
+background-color: #FF5C57;
+border: solid 1px black;
+width: 250px;
+height: 600px;
+padding: 30px;
+position: absolute;
+top: 185px;
+right: 180px;
+}
+
+.fotos-profile{
+position: absolute;
+top: 450px;
+}
+.cuadro01,
+.cuadro04,
+.cuadro05
+{
+border: solid 1px grey;
+width: 700px;
+height: 580px;
+position: relative;
+left:200px;
+bottom:25px;
+background-color: #D2F8FF
+
+}
+
+
+.titulo01{
+position: relative;
+bottom:155px;
+left:75px;
+width: 590px;
+height: 70px;
+}
+.parrafo02{
+position: relative;
+bottom: 22px;
+left: 3px;
+width: 300px;
+}
+.parrafo01{
+position:relative;
+bottom:195px;
+left:20px;
+}
+.pic01{
+position: relative;
+bottom:210px;
+left: 20px;
+}
+.pp01{
+border:solid 2px grey;
+position: relative;
+bottom:90px;
+left:20px;
+}
+.li-com-comp{
+position: absolute;
+bottom: 60px;
+left: 22px;
+}
+.caja-coment1{
+position: absolute;
+bottom:27px;
+left: 20px;
+width: 550px;
+height: 30px;
+}
+.nav1,
+.nav2,
+.nav3{
+padding: 8px;
+border: solid 1px grey;
+color: #FF5C57;
+border-radius: 5px;
+}
+.pp00{
+position: absolute;
+top: 3px;
+left: 20px;
+}
+.pp02{
+position: absolute;
+left:55px;
+}
+.nombre{
+position: absolute;
+top: 170px;
+}
+.biografia{
+position: absolute;
+top:210px;
+}
+.follows{
+position: absolute;
+top: 320px;
+}
+.titulo00{
+position: absolute;
+top: -10px;
+left:75px;
+}
+.comentario00{
+position: absolute;
+top:50px;
+left:75px;
+}
+.fecha00{
+position: absolute;
+top:20px;
+left:75px;
+}
+.caja-coment{
+position: absolute;
+bottom:27px;
+left: 20px;
+width: 550px;
+height: 30px;
+}
+.pic02,
+.pic03{
+position: absolute;
+top: 100px;
+left: 20px;
+}
+.cuadro02,
+.cuadro03,
+.cuadro06,
+.cuadro07{
+border: solid 1px grey;
+ width: 700px;
+ height: 235px;
+ position: relative;
+ left:200px;
+ bottom: 25px;
+ background-color: #D2F8FF
+
+}
+
+
+
+
+
+
+
+
+.copyright{
+color: white;
+position : relative;
+bottom: 2px;
+left: 350px;
+}
+
+
+
+
+
+.clear{
+clear: both;
+}
+.but{
+color: white;
+border-radius: 5px;
+border: solid 1px white;
+}
+@media (max-width:1200px) {
+.info-perfil{
+width: 700px;
+height: 235px;
+position: relative;
+left:200px;
+top: -2780px;
+}
+.nombre{
+position: absolute;
+top: 0;
+left:200px;
+
+}
+.biografia{
+position: absolute;
+top: 40px;
+left:200px;
+
+}
+.follows{
+position: absolute;
+top:125px;
+left: 200px
+}
+.fotos-profile{
+position: absolute;
+top:65px;
+left: 465px;
+}
+.cuadro01,
+.cuadro02,
+.cuadro03,
+.cuadro04,
+.cuadro05,
+.cuadro06,
+.cuadro07{
+position: relative;
+bottom: -200px;
+}
+
+}
+@media (max-width: 400px) {
+body{
+  width: 100%;
+}
+.cuadro01,
+.cuadro02,
+.cuadro03,
+.cuadro04,
+.cuadro05,
+.cuadro06,
+.cuadro07,
+.info-perfil,
+.pie{
+  width: 100%
+}
+}

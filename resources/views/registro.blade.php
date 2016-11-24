@@ -1,91 +1,98 @@
-@extends('app')
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/registro-styles.css">
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<!-- <script src="js/validacion.js"></script> -->
+<title>Inicio de sesión</title>
+</head>
+<body>
+    <div class="contenedor">
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-                        {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+     </div>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
-                        {{-- Edito el formulari para agregarle el campo del Apellido --}}
-                        <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Lastname</label>
 
-                            <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required autofocus>
+  <form class="registro" method="POST" enctype= "multipart/form-data">
 
-                                @if ($errors->has('lastname'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+          <label for="name">Nombre</label>
+          <br>
+          <input name="name" id="name" type="text" value='<?=$nombreDefault?>' maxlength="50">
+          <?php if (isset($errores["name"])) {
+    echo $errores["name"];
+}
+?>  <br/>
+                    <span id='register_name_errorloc' class='error'></span>
+          <br>
+          <label for="lastname">Apellido</label>
+          <br>
+          <input name="lastname" id="lastname" type="text" value='<?=$lastnameDefault?>'>
+          <?php if (isset($errores["lastname"])) {
+    echo $errores["lastname"];
+  } ?>
+          <br>
+          <span id='register_lastname_errorloc' class='error'></span>
+          <label for="email">Mail</label>
+          <br>
+          <input name="email" id="email" type="mail" value='<?=$emailDefault?>'maxlength="50">
+          <?php if (isset($errores["email"])) {
+    echo $errores["email"];
+}
+?>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                    <br/>
+                    <span id='register_email_errorloc' class='error'></span>
+          <br>
+          <label for="username">Nombre de usuario</label>
+          <br>
+          <input name="username" id="username" type="text" value='<?=$userDefault?>'>
+          <?php if (isset($errores["username"])) {
+    echo $errores["username"];
+}
+?>
+          <br>
+          <span id='register_username_errorloc' class='error'></span>
+          <label for="password">Contraseña</label>
+          <br>
+          <input name="password" id="password" type="password" value='<?=$passDefault?>'>
+          <?php if (isset($errores["password"])) {
+    echo $errores["password"];
+}
+?>
+          <br>
+          <span id='register_password_errorloc' class='error'></span>
+          <label for="password2">Repetir contraseña</label>
+          <br>
+          <input name="password2" id="password2" type="password">
+          <?php if (isset($errores["password2"])) {
+    echo $errores["password2"];
+}
+?>
+          <br>
+          <span id='register_password2_errorloc' class='error'></span>
+          Fecha de nacimiento<br><input type="date" name="birth" id="birth">
+          <br>
+          Avatar <br>
+          <input type="file" name="avatar" value="" id="avatar">
+          <?php if (isset($errores["avatar"])) {
+    echo $errores["avatar"];
+}
+?>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
+  <button type="submit" class="registrarse">Registrarse</button>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <!-- @lang('register.title') -->
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+  </form>
+
+@include('layouts.footer')
+</body>
+</html>
