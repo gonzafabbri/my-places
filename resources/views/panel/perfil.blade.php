@@ -18,9 +18,11 @@
 <div class="mostrar_posts">
   @if(Posts->count()>0)
     @foreach($posts as $post)
+
       <div class="">
         {{$post->content}}
       </div>
+      <a href="#">Borrar Post</a>
     @endforeach
   @else
     <div class="post">

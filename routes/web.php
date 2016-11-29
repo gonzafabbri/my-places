@@ -14,14 +14,18 @@
 Route::get('/', function () {
     return view('index');
 });
-
+Route::get('/inicio', function(){
+  return view('inicio');
+})->name('inicio');
 Route::get('/registro', function(){
     return view('registro');
-});
+})->name('registro');
+Route::get('/faq', function(){
+  return view('faq');
+})->name('faq');
+Route::post('/registro', 'RegisterController@validator');
 
-Route::post('/registro', 'RegisterContorller@validator');
-
-Route::post('/registro', 'RegisterContorller@create');
+Route::post('/registro', 'RegisterController@create');
 
 Route::group(['middleware'=>'auth'], function(){
   Route::get('mis-posts', 'HomeController@displayPosts');

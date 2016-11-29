@@ -7,7 +7,7 @@
   </head>
   <body>
     <footer class="pie">
-  <a href="faq.php" class="a-pie">Ayuda</a>
+  <a href="{{route('faq')}}" class="a-pie">Ayuda</a>
   <a href="#" class="a-pie">Términos y condiciones</a>
   <a href="#" class="a-pie">Mapa del sitio</a>
   <small class="copyright">Copyright 2016 SA My places | Todos los derechos reservados.</small>

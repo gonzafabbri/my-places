@@ -1,0 +1,112 @@
+*{
+  box-sizing: border-box;
+}
+
+
+.inicio{
+  float: right;
+}
+.registro{
+  clear: both;
+  background-color: #1F1E2B;
+  font-size: 1.5em;
+  color: #FF5C57;
+}
+.personales{
+  width: 50%;
+  position: relative;
+  left: 400px;
+  top: 128px;
+}
+.cuenta{
+  width: 50%;
+  position: relative;
+  left: 600px;
+  bottom: 100px;
+}
+.registrarse{
+  position: relative;
+  left: 540px;
+  bottom: 50px;
+}
+
+input{
+  border-radius: 15px;
+}
+.nav2{
+  height: 20px;
+}
+.b-inicio{
+  background-color: #FF5C57;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+}
+.registrarse{
+  background-color: #FF5C57;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.copyright{
+  color: white;
+  position : relative;
+  bottom: 2px;
+  left: 350px;
+}
+
+@media (max-width: 768px) {
+
+  .nav2{
+    background-color: #FF5C57;
+    width: 100%;
+  }
+
+  .personales{
+    position: relative;
+    width: 25%;
+    left: 10%;
+  }
+  .cuenta{
+    position: relative;
+    left: 65%;
+    width: 25%;
+    top: 50%;
+  }
+  .registrarse{
+    position: relative;
+    left: 45%;
+  }
+
+
+}
+@media (max-width: 375px) {
+  #nick,
+  #password{
+    display: block;
+  }
+  .inicio{
+    position: relative;
+    right: 30%;
+  }
+  .registro{
+    height: 500px;
+    width: 100%;
+  }
+  .personales{
+    display: block;
+    position: relative;
+    top: 30px;
+  }
+  .cuenta{
+    top: 10%;
+    left: 25%;
+    height: 30%;
+  }
+  .registrarse{
+    top: 30px;
+    left: 30%;
+  }
+
+}

@@ -1,3 +1,4 @@
+@include('layouts.navbar_otros')
 <!DOCTYPE html>
 <html>
 
@@ -104,13 +105,8 @@
       <div class="clear">
 
       </div>
-      {{-- <?= include 'footer.php';?> --}}
-      <!-- <footer class="pie">
-    <a href="file:///C:/Users/Win7/Documents/digital-house/my-places/faq.html" class="a-pie">Ayuda</a>
-    <a href="#" class="a-pie">Términos y condiciones</a>
-    <a href="#" class="a-pie">Mapa del sitio</a>
-    <small class="copyright">Copyright 2016 SA My places | Todos los derechos reservados.</small>
-  </footer> -->
+      @include('layouts.footer')
+
     </div>
 </body>
 

@@ -1,3 +1,4 @@
+@include('layouts.navbar_login')
 <!DOCTYPE html>
 <html>
 

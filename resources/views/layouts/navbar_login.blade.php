@@ -11,7 +11,6 @@
             <img src="images/logo-myplaces.png" class="logo">
 
 							<form method="POST">
-			<?php include("errores.php"); ?>
 			<fieldset>INICIA SESIÓN <br><br>
 			<div>
 				<label for="email">Email</label>
@@ -35,9 +34,9 @@
               <nav class="barra2">
                   <img src="images/menu_icon.png" class="icon"/>
                   <ul>
-                      <li><a href="registro.php">REGISTRACIÓN</a></li>
-                      <li><a href="faq.php">FAQ</a></li>
-                      <li><a href="#">ABOUT US</a></li>
+                      <li><a href="{{route('registro')}}">REGISTRACIÓN</a></li>
+                      <li><a href="{{route('faq')}}">FAQ</a></li>
+                      <li><a href="{{route('inicio')}}">ABOUT US</a></li>
                   </ul>
               </nav>
 
