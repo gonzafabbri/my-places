@@ -12,24 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('inicio');
 });
-Route::get('/inicio', function(){
-  return view('inicio');
-})->name('inicio');
-Route::get('/registro', function(){
-    return view('registro');
-})->name('registro');
+
+Route::get('/register', function(){
+    return view('auth.register');
+});
+
 Route::get('/faq', function(){
   return view('faq');
 })->name('faq');
-Route::post('/registro', 'RegisterController@validator');
 
-Route::post('/registro', 'RegisterController@create');
+Route::post('/register', 'Auth\RegisterController@validator');
+
+Route::post('/register', 'Auth\RegisterController@store');
 
 Route::group(['middleware'=>'auth'], function(){
   Route::get('mis-posts', 'HomeController@displayPosts');
   Route::get('mi-perfil', 'HomeController@displayProfile');
 });
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index');

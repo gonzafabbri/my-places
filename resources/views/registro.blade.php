@@ -19,7 +19,7 @@
 
 
   <form class="registro" enctype= "multipart/form-data" role="form" method="POST" action="{{ url('/registro') }}">
-
+{{ csrf_field() }}
 
 
           <label for="name">Nombre</label>
