@@ -11,6 +11,11 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $post = new Post([
+          'titulo' => $request->titulo,
+          'contenido' => $request->contenido,
+          'user_id' => $request->user_id
+        ]);
+        $post->save();
     }
 }

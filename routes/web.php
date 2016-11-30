@@ -14,6 +14,12 @@
 Route::get('/', function () {
     return view('inicio');
 });
+<<<<<<< HEAD
+Route::get('/register', function () {
+    return view('register');
+});
+Route::post('/register', 'Controller@Guardar');
+=======
 
 Route::get('/register', function(){
     return view('auth.register');
@@ -33,7 +39,11 @@ Route::group(['middleware'=>'auth'], function(){
 });
 
 Route::get('/home', 'HomeController@index');
+<<<<<<< HEAD
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+=======
+>>>>>>> 48e1c8087a4d1de709937fc0f9478a7f834d99e2
+>>>>>>> f0e561cef766f881db9eef561138371d49b35272
