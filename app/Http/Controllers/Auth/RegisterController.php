@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User as User;
+use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -54,9 +54,8 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'username' => 'required|max:100',
             'password' => 'required|min:6',
-            'password-confirm' => 'required|min:6|same:password',
-            'birth' => 'required|date|before:1998-01-01',
-            'avatar' => 'image|mimes:jpeg,bmp,png|max:512'
+            'password-confirm' => 'required|same:password',
+            'birth' => 'required|date|before:1998-01-01'
         ]);
     }
 
@@ -75,7 +74,7 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'password' => bcrypt($data['password']),
             'birth' => $data['birth'],
-            'avatar' => $data['avatar'],
+            'avatar' => $data['avatar']
         ]);
     }
     public function store(Request $request)

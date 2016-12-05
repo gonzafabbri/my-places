@@ -14,19 +14,15 @@ class ProfileController extends Controller
     // }
     function indexUser()
     {
-      $name = User::take('name')->get();
-      $lastname = User::take('lastname')->get();
-      $username = User::take('username')->get();
-      $contenido = User::take('contenido')->filterBy('user_id')->get();
+      $users = User::take()->get();
+      $posts = Post::take()->orderBy('created_at', 'DESC')->get();
     }
 
     public function mostrarPosts()
     {
       return view('panel.perfil')
-      ->with('name', $name)
-      ->with('lastname', $lastname)
-      ->with('username', $username)
-      ->with('contenido', );
+      ->with('users', $users)
+      ->with('posts', $posts);
     }
     protected function storeAvatar($request) {
     	$user = $request->Auth::user(); //El usuario de la request es el usuario autenticado. Podria obtenerlo también con Auth::user()

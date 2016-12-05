@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+  @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -84,7 +93,7 @@
                             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password-confirm" required>
                             </div>
                         </div>
 
@@ -92,7 +101,7 @@
                             <label for="birth" class="col-md-4 control-label">Birth</label>
 
                             <div class="col-md-6">
-                                <input id="birth" type="date" class="form-control" name="password_confirmation" required>
+                                <input id="birth" type="date" class="form-control" name="birth" required>
                             </div>
                         </div>
 
@@ -100,7 +109,7 @@
                             <label for="avatar" class="col-md-4 control-label">Avatar</label>
 
                             <div class="col-md-6">
-                                <input id="avatar" type="file" class="form-control" name="password_confirmation" required>
+                                <input id="avatar" type="file" class="form-control" name="avatar" required>
                             </div>
                         </div>
 
@@ -119,4 +128,5 @@
         </div>
     </div>
 </div>
+@include('layouts.footer')
 @endsection

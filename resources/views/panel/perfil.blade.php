@@ -8,19 +8,19 @@
 </div>
 <div class="perfil">
   <img src="" alt="" />
-  <h1>{{User->name}}</h1>
-  <h1>{{User->lastname}}</h1>
-  <h1>{{User->username}}</h1>
+  <h1>{{$users->name}}</h1>
+  <h1>{{$users->lastname}}</h1>
+  <h1>{{$users->username}}</h1>
   <div class="cantidad_posts">
-    {{Posts->count()}}
+    {{$posts->count()}}
   </div>
 </div>
 <div class="mostrar_posts">
-  @if(Posts->count()>0)
+  @if($posts->count()>0)
     @foreach($posts as $post)
 
       <div class="">
-        {{$post->content}}
+        {{$post->contenido}}
       </div>
       <a href="#">Borrar Post</a>
     @endforeach
@@ -30,3 +30,4 @@
     </div>
   @endif
 </div>
+@include('layouts.footer')
