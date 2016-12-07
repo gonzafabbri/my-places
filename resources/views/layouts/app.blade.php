@@ -35,9 +35,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        My Places!
-                    </a>
+                    <img src="images/logo-myplaces.png" class="logo">
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -65,6 +63,12 @@
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
+                                        </a>
+                                        <a  href="{{url('/perfil')}}">
+                                        Mi perfil
+                                        </a>
+                                        <a href="{{url('/home')}}">
+                                        Home
                                         </a>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

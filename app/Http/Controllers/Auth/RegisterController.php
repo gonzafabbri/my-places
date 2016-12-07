@@ -6,6 +6,7 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 
 class RegisterController extends Controller
@@ -76,12 +77,13 @@ class RegisterController extends Controller
             'birth' => $data['birth'],
             'avatar' => $data['avatar']
         ]);
+        
+
     }
     public function store(Request $request)
   {
       $user = new User;
       $user->create($request->all());
       $user->save();
-
   }
 }

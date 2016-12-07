@@ -1,4 +1,4 @@
-@include('layouts.navbar_otros')
+@include('layouts.app')
 <!DOCTYPE html>
 <html>
 

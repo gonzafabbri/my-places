@@ -3,27 +3,58 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
+use App\User;
+use Auth;
 
 class ProfileController extends Controller
 {
 
-    // protected function removePostIfExists(Auth::User()){
-    //   if($post->id){
-    //
-    //   }
-    // }
+    protected function removePostIfExists($id){
+      $users = Auth::user();
+      $posts = Post::All();
+
+      $post = Post::find($id);
+      $post->delete();
+
+      // return view('panel.perfil')
+      // ->with('users', $users)
+      // ->with('posts', $posts);
+
+      return redirect('/perfil');
+
+    }
     function indexUser()
     {
-      $users = User::take()->get();
-      $posts = Post::take()->orderBy('created_at', 'DESC')->get();
-    }
+      $users = Auth::user();
 
-    public function mostrarPosts()
-    {
+      $posts = Post::All();
       return view('panel.perfil')
       ->with('users', $users)
       ->with('posts', $posts);
     }
+    protected function createPost(array $data)
+    {
+        return Post::create([
+            'contenido' => $data['contenido']
+        ]);
+    }
+    public function storePost(Request $request)
+  {   $post = Auth::user()->posts()->create([
+      'contenido'  => $request->contenido,
+      'user_id'    => Auth::id()
+    ]);
+    $users = Auth::user();
+    $posts = Post::All();
+    return view('panel.perfil')
+    ->with('users', $users)
+    ->with('posts', $posts);
+      // $post = new Post;
+      // $post->create($request->all());
+      // $post->save();
+      // $id = Auth::user()->id;
+      // $id
+  }
     protected function storeAvatar($request) {
     	$user = $request->Auth::user(); //El usuario de la request es el usuario autenticado. Podria obtenerlo también con Auth::user()
 

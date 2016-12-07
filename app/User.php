@@ -2,14 +2,21 @@
 
 namespace App;
 
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+
+
+
+
+class User extends Model implements AuthenticatableContract
 {
+  use Authenticatable;
   protected $fillable = [
       'name', 'lastname', 'email', 'username', 'password', 'birth', 'avatar'  //Agrego los campos photo y lastname!
   ];
-  protected $table = 'users';
+  // protected $table = 'users';
 
   /**
    * The attributes that should be hidden for arrays.

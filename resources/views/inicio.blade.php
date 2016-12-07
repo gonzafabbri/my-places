@@ -1,4 +1,4 @@
-@include('layouts.navbar_login')
+@include('layouts.app')
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,14 +8,13 @@
     <title>Bienvenido a MyPlaces!</title>
   </head>
   <body style="background-color:transparent">
-<div class="inicio"  style="background-image:url(http://1.bp.blogspot.com/_ShDX7RISd-A/SRE6CMK5BtI/AAAAAAAACj0/muQLNkfxWvI/s400/Buenos_Aires-Puente_de_la_Mujer.jpg);
-height:250px">
-<p class="inicio-p" style="color:#FF5C57;font-size:2em">
+<div class="inicio"  style="background-image:url(/images/bgi.png); background-size: cover; background-position:center center; height:650px; display: table-cell; vertical-align: middle;">
+<p class="inicio-p" style="color:#FF5C57;font-size:2em; text-shadow: 1px 1px 2px #FFF; width:80%; margin: auto; text-align: center;">
     Bienvenido a MyPlaces, la red social donde podrás compartir, explorar y conocer a cerca
   de los grandes lugares que visitaste y podrás visitar en Buenos Aires. Un espacio para
   compartir con tus amigos e informate a cerca de todas las posibilidades que tienes
   para disfrutar de esta gran ciudad al máximo!
-  </p>
+</p>
 </div>
 @include('layouts.footer')
   </body>

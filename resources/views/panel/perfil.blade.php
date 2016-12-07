@@ -1,33 +1,64 @@
-@include('layouts.navbar_otros')
-<div class="posts">
-  <form class="" action="index.html" method="post">
-    <input type="text" name="content" value="">
-    <input type="file" name="photo" value="">
-    <button type="submit" name="button">Enviar post</button>
-  </form>
-</div>
-<div class="perfil">
-  <img src="" alt="" />
-  <h1>{{$users->name}}</h1>
-  <h1>{{$users->lastname}}</h1>
-  <h1>{{$users->username}}</h1>
-  <div class="cantidad_posts">
-    {{$posts->count()}}
+@include('layouts.app')
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="perfil" style="color:white; border:3px white solid; width:50%; margin-left:25%">
+      <div class="nombre-usuario" style="color:white; border:2px white solid; text-align:center">
+        <h1>{{$users->username}}</h1>
+        </div>
+        <div class="cantidad_posts" style="border:3px white solid; color:white; text-align:center; font-size:25px ">
+          Cantidad de posts:  {{$posts->count()}}
+        </div>
+      <div class="avatar" style="border:2px white solid; text-align:center">
+        <img src="{{$users->avatar}}"  />
+      </div>
+
+
+    </div>
+    <br><br>
+  </div>
+  <div class="row">
+    <div class="posts" style="width:50%; margin-left:25%; color:white; border:3px grey solid; border-radius:5px">
+      <form class="" role="form" action="{{url('/perfil')}}" method="POST">
+        {{ csrf_field() }}
+        <input type="text" class="form-control" placeholder="Creá tu post" name="contenido">
+        O publicá una foto!
+        <input type="file" name="photo" value="">
+        <button type="submit" class="btn btn-primary">
+            Enviar Post
+        </button>
+      </form>
+    </div>
+
+  </div>
+  <br><br>
+  <div class="titulo" style="color:white; text-align:center; font-size:50px">
+    Mis posts!
+  </div>
+  <div class="row">
+    <div class="mostrar_posts" style="color:white">
+      @if(count($posts) != 0)
+        @foreach($posts as $post)
+
+          <div class="each-post" style="border:3px white solid; width:50%; margin-left:25%; background-color:#FF5C57; font-size:20px">
+            <img src="{{$users->avatar}}">
+            <br>
+            {{$post->contenido}}
+            <br><a href="borrarpost/{{ $post->id }}" style="border:2px black solid; color:white; background-color: grey">Eliminar post</a>
+          </div>
+
+        @endforeach
+      @else
+        <div class="post" style="color:white">
+          <h3>No has posteado nada aún</h3>
+        </div>
+      @endif
+    </div>
   </div>
 </div>
-<div class="mostrar_posts">
-  @if($posts->count()>0)
-    @foreach($posts as $post)
 
-      <div class="">
-        {{$post->contenido}}
-      </div>
-      <a href="#">Borrar Post</a>
-    @endforeach
-  @else
-    <div class="post">
-      <h3>No has posteado nada aún</h3>
-    </div>
-  @endif
-</div>
+
+
+
+
 @include('layouts.footer')
