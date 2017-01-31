@@ -9,8 +9,8 @@
         <div class="cantidad_posts" style="border:3px white solid; color:white; text-align:center; font-size:25px ">
           Cantidad de posts:  {{$posts->count()}}
         </div>
-      <div class="avatar" style="border:2px white solid; text-align:center">
-        <img src="{{$users->avatar}}"  />
+      <div class="avatar" style="border:2px white solid; text-align:center; padding:20px">
+        <img src="avatars/{{$users->avatar}}" style="width:100px;height:100px "  />
       </div>
 
 
@@ -41,16 +41,18 @@
         @foreach($posts as $post)
 
           <div class="each-post" style="border:3px white solid; width:50%; margin-left:25%; background-color:#FF5C57; font-size:20px">
-            <img src="{{$users->avatar}}">
+            <img src="avatars/{{$users->avatar}}" style="width:50px;height:50px ">
+            {{$users->username}}
             <br>
             {{$post->contenido}}
             <br><a href="borrarpost/{{ $post->id }}" style="border:2px black solid; color:white; background-color: grey">Eliminar post</a>
+            <a href="editpost/{{ $post->id }}" style="border:2px black solid; color:white; background-color: grey">Editar post</a>
           </div>
 
         @endforeach
       @else
-        <div class="post" style="color:white">
-          <h3>No has posteado nada aún</h3>
+        <div class="post" style="color:white; text-align:center">
+          <h3>No has posteado nada aún!</h3>
         </div>
       @endif
     </div>

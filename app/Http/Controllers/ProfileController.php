@@ -9,6 +9,29 @@ use Auth;
 
 class ProfileController extends Controller
 {
+    protected function edit($id){
+      return view('admin.posts-edit', ["id" => $id]);
+    }
+    protected function update(Request $request, $id)
+    {
+      $users = Auth::user();
+      $posts = Post::All();
+      $post = Post::find($id);
+
+      //Actualizar la info
+      $post->fill([
+			'contenido'	=> $request->contenido,
+		]);
+
+      $post->save();
+
+      //Redirigir adonde quieran
+      // return view('panel.perfil')
+      // ->with('users', $users)
+      // ->with('posts', $posts);
+      return redirect ('/perfil');
+
+    }
 
     protected function removePostIfExists($id){
       $users = Auth::user();

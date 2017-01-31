@@ -70,7 +70,7 @@
         </div>
       <div class="contenedor_b">
           <h3>Emprendimiento</h3>
-          <img src="images/Screen Shot 2016-08-31 at 20.54.30.png" alt="" />
+          <img src="images/bgi.png" alt="" />
           <p>
             lorem Ipsum Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi etiam futurum.
           </p>

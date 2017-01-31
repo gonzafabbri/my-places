@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model implements AuthenticatableContract
 {
   use Authenticatable;
+  public $timestamps = false;
   protected $fillable = [
       'name', 'lastname', 'email', 'username', 'password', 'birth', 'avatar'  //Agrego los campos photo y lastname!
   ];

@@ -32,15 +32,17 @@ Auth::routes();
 //     return view('auth.register');
 // });
 Route::get('borrarpost/{id}', 'ProfileController@removePostIfExists');
+Route::get('editpost/{id}', 'ProfileController@edit');
+Route::post('editpost/{id}', 'ProfileController@update');
 Route::get('/perfil', 'ProfileController@indexUser');
 Route::post('/perfil', 'ProfileController@storePost');
 Route::get('/faq', function(){
   return view('faq');
 })->name('faq');
 
-Route::post('/register', 'Auth\RegisterController@validator');
-
-Route::post('/register', 'Auth\RegisterController@store');
+// Route::post('/register', 'Auth\RegisterController@validator');
+//
+// Route::post('/register', 'Auth\RegisterController@store');
 //Route::delete('/borrar-post', 'ProfileController@removePostIfExists');
 
 
