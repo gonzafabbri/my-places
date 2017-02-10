@@ -62,8 +62,13 @@ class ProfileController extends Controller
             'contenido' => $data['contenido']
         ]);
     }
+
     public function storePost(Request $request)
-  {   $post = Auth::user()->posts()->create([
+  {  $this->validate($request, [
+    'contenido' => 'required|max:150',
+  ]);
+
+     $post = Auth::user()->posts()->create([
       'contenido'  => $request->contenido,
       'user_id'    => Auth::id()
     ]);

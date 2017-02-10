@@ -1,4 +1,4 @@
-
+@include('layouts.app')
 
   <div class="row">
     <div class="posts" style="width:50%; margin-left:25%; color:white; border:3px grey solid; border-radius:5px">
@@ -15,3 +15,4 @@
     </div>
 
   </div>
+@include('layouts.footer')

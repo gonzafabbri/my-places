@@ -21,7 +21,13 @@
     <div class="posts" style="width:50%; margin-left:25%; color:white; border:3px grey solid; border-radius:5px">
       <form class="" role="form" action="{{url('/perfil')}}" method="POST">
         {{ csrf_field() }}
+        <div class="form-group{{ $errors->has('contenido') ? ' has-error' : '' }}">
         <input type="text" class="form-control" placeholder="Creá tu post" name="contenido">
+        @if ($errors->has('contenido'))
+            <span class="help-block">
+                <strong>{{ $errors->first('contenido') }}</strong>
+            </span>
+        @endif
         O publicá una foto!
         <input type="file" name="photo" value="">
         <button type="submit" class="btn btn-primary">
