@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/perfil', function(){
   return view('panel.perfil');
 });
+Route::get('/public', function(){
+  return view('panel.public');
+});
 // Route::get('/registro', function () {
 //     return view('registro');
 // });
@@ -36,6 +39,7 @@ Route::get('editpost/{id}', 'ProfileController@edit');
 Route::post('editpost/{id}', 'ProfileController@update');
 Route::get('/perfil', 'ProfileController@indexUser');
 Route::post('/perfil', 'ProfileController@storePost');
+Route::get('/public/{id}', 'PublicController@index');
 Route::get('/faq', function(){
   return view('faq');
 })->name('faq');

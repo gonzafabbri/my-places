@@ -56,6 +56,14 @@ class ProfileController extends Controller
       ->with('users', $users)
       ->with('posts', $posts);
     }
+    function indexPosts()
+    {
+
+      $posts = Post::where('user_id', Auth::user())->get();
+      return view('panel.perfil')
+      ->with('users', $users)
+      ->with('posts', $posts);
+    }
     protected function createPost(array $data)
     {
         return Post::create([

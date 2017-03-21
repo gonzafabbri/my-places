@@ -28,9 +28,9 @@
                 <strong>{{ $errors->first('contenido') }}</strong>
             </span>
         @endif
-        O publicá una foto!
+        {{-- O publicá una foto!
         <input type="file" name="photo" value="">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary"> --}}
             Enviar Post
         </button>
       </form>
