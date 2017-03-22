@@ -47,23 +47,28 @@ class ProfileController extends Controller
       return redirect('/perfil');
 
     }
+
+    //
     function indexUser()
     {
       $users = Auth::user();
 
-      $posts = Post::All();
+      $posts = Post::join('users', 'post.user_id', '=', 'users.id')
+      ->get(Auth::user());
+      dd($posts);
       return view('panel.perfil')
       ->with('users', $users)
       ->with('posts', $posts);
-    }
-    function indexPosts()
-    {
 
-      $posts = Post::where('user_id', Auth::user())->get();
-      return view('panel.perfil')
-      ->with('users', $users)
-      ->with('posts', $posts);
     }
+    // function indexPosts()
+    // {
+    //
+    //   $posts = Post::join
+    //   return view('panel.perfil')
+    //   ->with('users', $users)
+    //   ->with('posts', $posts);
+    // }
     protected function createPost(array $data)
     {
         return Post::create([

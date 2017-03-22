@@ -38,6 +38,7 @@ Route::get('borrarpost/{id}', 'ProfileController@removePostIfExists');
 Route::get('editpost/{id}', 'ProfileController@edit');
 Route::post('editpost/{id}', 'ProfileController@update');
 Route::get('/perfil', 'ProfileController@indexUser');
+Route::get('/perfil/{id}', 'ProfileController@index');
 Route::post('/perfil', 'ProfileController@storePost');
 Route::get('/public/{id}', 'PublicController@index');
 Route::get('/faq', function(){

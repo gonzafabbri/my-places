@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model implements AuthenticatableContract
 {
   use Authenticatable;
+  protected $table = 'users';
   public $timestamps = false;
   protected $fillable = [
       'name', 'lastname', 'email', 'username', 'password', 'birth', 'avatar'  //Agrego los campos photo y lastname!
@@ -38,8 +39,5 @@ class User extends Model implements AuthenticatableContract
    */
   public function posts() {
       return $this->hasMany('App\Post');
-  }
-  public function seguidores() {
-      return $this->hasMany('App\Seguidor');
   }
 }
