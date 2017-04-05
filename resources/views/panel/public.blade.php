@@ -6,7 +6,8 @@
       @foreach($posts as $post)
 
         <div class="each-post" style="border:3px white solid; width:50%; margin-left:25%; background-color:#FF5C57; font-size:20px">
-          <img src="@php echo asset('storage')@endphp/avatars/{{$post->avatar}}" style="width:50px;height:50px ">
+          {{-- <img src="@php echo asset('storage')@endphp/avatars/{{$post->avatar}}" style="width:50px;height:50px "> --}}
+<img src="avatars/{{$post->avatar}}" style="width:50px;height:50px ">
           {{$post->username}}
           <br>
           {{$post->contenido}}

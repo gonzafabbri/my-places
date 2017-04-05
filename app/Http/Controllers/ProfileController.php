@@ -9,6 +9,19 @@ use Auth;
 
 class ProfileController extends Controller
 {
+  function indexUser()
+  {
+    $users = Auth::user();
+
+    $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
+    ->where('posts.user_id', '=', Auth::id())
+    ->get();
+    // dd($posts);
+    return view('panel.perfil')
+    ->with('users', $users)
+    ->with('posts', $posts);
+
+  }
     protected function edit($id){
       return view('admin.posts-edit', ["id" => $id]);
     }
@@ -49,18 +62,7 @@ class ProfileController extends Controller
     }
 
     //
-    function indexUser()
-    {
-      $users = Auth::user();
 
-      $posts = Post::join('users', 'post.user_id', '=', 'users.id')
-      ->get(Auth::user());
-      dd($posts);
-      return view('panel.perfil')
-      ->with('users', $users)
-      ->with('posts', $posts);
-
-    }
     // function indexPosts()
     // {
     //
